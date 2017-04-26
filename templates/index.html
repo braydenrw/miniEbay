@@ -1,0 +1,315 @@
+$def with (items, categories)
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+div.table-title {
+  display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+th {
+  color:white;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:black;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+a:link, a:visited {
+    background-color: #1b1e24;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: orange;
+}
+.mygif {
+    height:100px;
+    width:100px;
+    background:url('/static/ChecksOut.gif');
+    margin-top:-50px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+    /*top: 12px;
+    left: -65px;*/
+     /*position the [div] on the center*/
+}
+  /*this is the hover event trigger*/
+  /*
+.mygif:hover {
+    cursor:pointer; 
+    background:url('/static/ChecksOut.gif');
+}*/
+
+input[type=text] {
+    font-size: 18px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    background-color: black;
+    color: #979797;
+    height: 24px;
+    width: 120px;
+    color: white;
+    text-transform:uppercase;
+}
+#boxme{
+    display:inline-block;
+    width:100px;
+    height:50px;
+    background-color:#ccc;
+    border:1px solid #ff0000;
+}
+select {
+   background: transparent;
+   border: 1px solid #ccc;
+   width: 268px;
+   padding: 5px;
+   font-size:23px;
+   font-weight: 100;
+   line-height: 1;
+   height: 40px;
+   -webkit-appearance: none;
+   }
+#fontme{
+  color:white;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:12px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+#fontme2{
+  color:white;
+  font-size:23px;
+  font-weight: 100;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+#fontme3{
+  color:black;
+  font-size:23px;
+  font-weight: 100;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding:12px;
+  vertical-align:middle;
+}
+#relative {
+  position: relative;
+  padding-top: 0cm;
+  left: 0px;
+}
+#relative2 {
+  position: relative;
+  padding-top: 0cm;
+  left: 0px;
+}
+#logo{
+  position: absolute;
+  top: 12px;
+  left: 45px;
+}
+body{
+  background-color: #3e94ec;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  margin: 0px;}
+#pagetop{
+  position: absolute;
+  top: 0px;
+  width:100%;
+  height: 50px;
+  background: #06C;
+  color: #FFF;
+  font-size: 23px;
+  padding-top: 50px;
+  transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+  overflow:hidden;
+}
+#pagetop > #menu{
+  position: fixed;
+  bottom: 0px;
+  width:100%;
+  background: #1b1e24;
+  height: 50px;
+  transition: height 0.3s linear 0s;
+}
+#wrapper{ margin-top: 230px; }
+</style>
+<script>
+var pagetop, menu, yPos;
+function yScroll(){
+  pagetop = document.getElementById('pagetop');
+  menu = document.getElementById('menu');
+  yPos = window.pageYOffset;
+  if(yPos > 150){
+    pagetop.style.height = "40px";
+    pagetop.style.paddingTop = "8px";
+    menu.style.height = "50px";
+  } else {
+    pagetop.style.height = "50px";
+    pagetop.style.paddingTop = "50px";
+    menu.style.height = "50px";
+  }
+}
+window.addEventListener("scroll", yScroll);
+</script>
+</head>
+  <body style="background-color:white">
+   <div id="pagetop">
+      <div id="logo"><img src="/static/Logo.png" alt="SAP Logo" width="400px" height="100px"/></div>
+  <div id="menu"> <div id="relative"><div id="fontme2"><a href="../">Home</a><a href="/sell/">Sell</a><a href="/time/">System Clock</a></div></div></div>
+  <div class="mygif"></div>
+</div>
+ <br><br><br> <br><br>
+    <div id="fontme">Search</div>
+    <form action="" method="post">
+      <div id="fontme3">
+      Item No: <input type="text" name="idnumber"><br>
+      Item Title: <input type="text" name="title"><br>
+      Item Description: <input type="text" name="description"><br>
+      Min Price: <input type="text" name="minprice"><br>
+      Max Price: <input type="text" name="maxprice"><br>
+      Category:<br>
+      <select type="text" name="category">
+        <option></option>
+        $for category in categories
+          <option>$category.name</option>
+      </select><br>
+      Open:<br>
+      <select name="isopen">
+          <option></option>
+          <option value="$0">Closed</option>
+          <option value="$1">Available</option>
+      </select><br>
+      <input type="submit" name="Submit1" value="Submit">
+      </div>
+    </form>
+    <div id="fontme">Results</div>
+    <table>
+      <tr>
+        <th width="150">ID</th> 
+        <th width="150">Category</th> 
+        <th width="150">Title</th> 
+        <th width="150">Description</th> 
+        <th width="150">Current Bid</th> 
+        <th width="150">Open</th>
+        <th width="150">Bid</th>
+      </tr>
+    $for item in items:
+      <tr>
+        <td width="150">$item.id</td> 
+        <td width="150">$item.categories</td> 
+        <td width="150">$item.title</td> 
+        <td width="150">$item.description</td>
+        <td width="150">$item.price</td> 
+        $if item.open != 0:
+          <td width="150">Available</td>
+        $if item.open == 0:
+          <td width="150">Closed</td>
+        <td> <a href="/bid/$item.id">Bid</a></td>
+      </tr>
+    </table>
+  </body>
+  <br><br><br>
+</html>
